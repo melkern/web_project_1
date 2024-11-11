@@ -1,0 +1,317 @@
+/* Навигация */
+nav {
+    background-color: #4e3b3b; /* Коричневый фон */
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white; /* Белый текст */
+    text-decoration: none; /* Убираем подчеркивание */
+    margin: 0 15px;
+    font-weight: bold; /* Жирный текст */
+}
+
+nav a:hover {
+    text-decoration: underline; /* Подчеркивание при наведении */
+}
+
+body {
+    font-family: 'Georgia', serif; /* Винтажный шрифт */
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5; /* Светлый фон */
+    color: #4e3b3b; /* Темный текст */
+}
+
+table {
+  margin-top: 100px; /* Отступ сверху перед таблицей */
+  border-collapse: collapse; /* Убирает двойные границы между ячейками */
+    width: 80%; /* Ширина таблицы */
+    margin: auto; /* Выравнивание по центру */
+    border-collapse: collapse;
+    background-image: url('backround.jpg'); /* Укажите путь к изображению фона */
+    background-size: cover;
+    border: 2px solid #4e3b3b; /* Цветная граница таблицы */
+    border-radius: 8px; /* Закругление углов */
+    overflow: hidden; /* Обрезка содержимого по углам */
+}
+
+
+th, td {
+    padding: 15px; /* Отступы внутри ячеек */
+    text-align: center;
+    border: 2px solid #4e3b3b; /* Цветные границы ячеек */
+}
+
+th {
+    background-color: #4e3b3b; /* Полупрозрачный фон заголовков */
+    font-size: 1.2em; /* Размер шрифта заголовков */
+    color: #f5f5f5; /* Цвет текста заголовков */
+}
+
+td {
+    background-color: rgba(255, 255, 255, 0.6); /* Полупрозрачный фон ячеек */
+}
+
+/* Заголовки */
+h1, h2, h3 {
+    color: #4e3b3b; /* Темно-коричневый цвет */
+    text-align: center;
+    font-family: 'Merriweather', serif; /* Шрифт для заголовков */
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-top: 20px;
+}
+
+h2 {
+    font-size: 2em;
+    margin: 20px 0;
+}
+
+.section {
+    margin: 50px 0;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.thumbnail {
+    width: 100px; /* Ширина миниатюры */
+    cursor: pointer;
+    transition: transform 0.2s; /* Плавный эффект при наведении */
+}
+
+.thumbnail:hover {
+    transform: scale(1.1); /* Увеличение миниатюры при наведении */
+}
+
+/* Стили для навигации */
+.navigation {
+    background-color: #4e3b3b;
+    padding: 10px;
+    text-align: center;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #f0f0f0;
+    margin: 0 10px;
+}
+
+.navigation a.active {
+    font-weight: bold;
+}
+
+
+
+
+/* Основные стили для .top-nav навигации */
+.top-nav {
+    background-color: #f5f5f5 ; /* Фон для навигационной панели */
+    padding: 10px 20px; /* Отступы внутри панели */
+    display: flex;
+    justify-content: flex-end; /* Выровнять элементы по правому краю */
+}
+
+/* Стили для ссылок внутри .top-nav */
+.top-nav a {
+    color: #ffffff; /* Цвет текста слоновой кости */
+    text-decoration: none;
+    font-weight: bold;
+    padding: 12px 30px; /* Просторные отступы */
+    background-color: #4e3b3b; /* Однотонный жёлтый фон */
+    border-radius: 30px; /* Овальная форма */
+    margin: 0 10px; /* Отступ между ссылками */
+    transition: color 0.3s;
+}
+
+/* Эффект при наведении для ссылок */
+.top-nav a:hover {
+    color: #b3b3b3; /* Мягкий серый при наведении */
+}
+
+
+nav ul {
+    list-style: none; /* Убираем маркеры списка */
+    padding: 0; /* Убираем внутренние отступы */
+    display: flex; /* Используем flexbox для горизонтального расположения */
+    justify-content: center; /* Центрируем элементы */
+}
+
+nav ul li {
+    margin: 0 10px; /* Отступы между элементами навигации */
+}
+
+nav ul li a {
+    color: white; /* Цвет ссылок */
+    min-width: unset;
+    min-height: unset;
+    text-decoration: none; /* Убираем подчеркивание */
+    transition: color 0.3s; /* Плавный переход при наведении */
+}
+
+nav ul li a:hover {
+    color: #919191; /* Цвет ссылок при наведении */
+}
+
+/* Стиль заголовков */
+h1, h3 {
+    text-align: center; /* Центрируем заголовки */
+    color: #4e3b3b; /* Цвет заголовков */
+}
+
+/* Стили для изображений */
+.image-links img, .album img {
+    margin: 5px; /* Отступы между изображениями */
+    border: 1px solid #ccc; /* Обводка вокруг изображений */
+    border-radius: 5px; /* Закругленные углы */
+}
+
+/* Форма */
+form {
+    background: #fff; /* Белый фон для формы */
+    padding: 20px; /* Внутренние отступы */
+    border-radius: 5px; /* Закругленные углы */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Тень для формы */
+    margin: 20px auto; /* Центрируем форму */
+    max-width: 400px; /* Максимальная ширина формы */
+}
+
+form label {
+    display: block; /* Каждый label на новой строке */
+    margin-bottom: 5px; /* Отступ снизу */
+}
+
+form input {
+    width: 80%; /* Ширина полей ввода */
+    padding: 10px; /* Внутренние отступы */
+    margin-bottom: 10px; /* Отступы между полями ввода */
+    border: 1px solid #ccc; /* Обводка вокруг полей ввода */
+    border-radius: 4px; /* Закругленные углы */
+}
+
+form button {
+    background: #4e3b3b; /* Цвет кнопки */
+    color: white; /* Цвет текста на кнопке */
+    border: none; /* Убираем обводку */
+    padding: 10px 15px; /* Внутренние отступы */
+    border-radius: 4px; /* Закругленные углы */
+    cursor: pointer; /* Курсор при наведении */
+    transition: background 0.3s; /* Плавный переход цвета */
+}
+
+form button:hover {
+    background: #555; /* Цвет кнопки при наведении */
+}
+
+
+
+
+
+
+
+#main_fon{
+  height:734px;
+  background-image: url(fon.jpg);
+  background-repeat: no-repeat;}
+
+#pass_title{
+  padding-top: 41px;
+  padding-left: 74px;
+  }
+.poiret-one-regular{
+  font-family:'Poiret One', sans-serif;
+  font-weight: italic;
+  font-style: normal;
+  letter-spacing: 0.8em;
+  word-spacing: 0.25em;
+}
+@font-face{
+  font-family: 'Kreadon';
+  src: local('Kreadon.ttf'),
+   url(/Kreadon.ttf.ttf);
+}
+.vidanstr1{
+  font-family: 'Kreadon';
+  padding-top: 20px;
+  padding-left: 145px;}
+
+.vidanstr2{
+  font-family: 'Kreadon';
+  padding-top: 10px;
+  padding-left: 175px;
+  word-spacing: 0.65em;
+}
+
+.vidanstrdata{
+  font-family: 'Kreadon';
+  padding-top: 37px;
+  padding-left: 105px;
+  word-spacing: 0.65em;
+  float:left;
+
+}
+
+.vidanstrcode{
+  font-family: 'Kreadon';
+  padding-top: 37px;
+  padding-left: 295px;
+  word-spacing: 0.65em;
+}
+
+.podpis{
+  padding-top: 30px;
+  padding-left: 55px;
+  float:left;
+}
+
+.podpis1{
+  padding-top: 50px;
+  padding-left: 115px;
+}
+
+.passfoto{
+  padding-top: 150px;
+  padding-left: 22px;
+  float:left;
+}
+.hfamilia{
+  padding-top: 105px;
+  padding-left: 250px;
+}
+
+.hname{
+  padding-top: 37px;
+  padding-left: 250px;
+}
+
+.hfname{
+  padding-top: 10px;
+  padding-left: 250px;
+
+}
+
+.hpol{
+  padding-top: 10px;
+  padding-left: 40px;
+  float:left;
+}
+
+.hborn{
+  padding-top: 10px;
+  padding-left: 340px;
+}
+
+.hpborn1{
+  padding-top: 6px;
+  padding-left: 250px;
+  word-spacing: 0.7em;
+}
+
+.hpborn2{
+  padding-top: 10px;
+  padding-left: 250px;
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Формы для отправки данных</title>
+    <style>
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #c2b280;
+            border-radius: 8px;
+            background-color: #fff8f0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"],
+        input[type="date"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #c2b280;
+            border-radius: 4px;
+            background-color: #f9f6f1;
+        }
+
+        input[type="submit"] {
+            background-color: #4e3b3b;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #4e3b3b;
+        }
+    </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="navigation">
+    <a href="index.html">Главная</a>
+    <a href="#head1">Где нас найти?</a>
+    <a href="https://web.telegram.org/k/#@vanes_vintage" target="_self"><img height="20px" src="tg.jpg"></a>
+    <a href="https://secondmap.ru/" target="_blank">Карта магазинов</a>
+    <a href="page1.html" class="active">Контактные данные</a> <!-- Активная ссылка -->
+    <a href="page2.html">Заказы</a>
+    <a href="DOM.html" >Паспорт</a>
+    <a href="dom_js_1.html">Изменяем кириллицу на латиницу</a>
+    <a href="dom_js_2.html">Задача</a>
+  </div>
+
+    <h1>Форма для отправки личных контактных данных</h1>
+    <form action="https://www.bing.com/search?" id="UserEnter" name="UserEnter" target="_blank">
+        <p><input type="hidden"  name="q" value="search"></p>
+
+        <label for="lastName">Фамилия:</label>
+        <input type="text" id="lastName" name="lastName" required><br><br>
+
+        <label for="firstName">Имя:</label>
+        <input type="text" id="firstName" name="firstName" required><br><br>
+
+        <label for="group">Группа:</label>
+        <input type="text" id="group" name="group" required><br><br>
+
+        <label for="phone">Мобильный телефон:</label>
+        <input type="tel" id="phone" name="phone" required><br><br>
+
+        <label for="email">Электронная почта:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="date">Дата отправки сообщения:</label>
+        <input type="date" id="date" name="date" value="<?php echo date('Y-m-d'); ?>" required><br><br>
+
+        <input type="hidden" name="formType" value="contactForm"><br>
+
+        <input type="submit" value="Отправить">
+    </form>
+
+</body>
+</html>

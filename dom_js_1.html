@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Изменяем кириллицу на латиницу по клику</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        h1 {
+            color: #6b4f4f;
+        }
+        #info {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+        }
+
+         #passport-data {
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: center; /* Выравнивание текста в рамочке по центру */
+        }
+
+        #passport-data h3 {
+            margin-bottom: 10px;
+        }
+
+        #passport-data p {
+            margin: 5px 0;
+        }
+
+        .change-button {
+            padding: 8px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+*{
+  padding:0px;
+  margin:0px;
+}
+    </style>
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <div class="navigation">
+    <a href="index.html" class="active">Главная</a>
+    <a href="#head1">Где нас найти?</a> <!-- страница с переходом на закладку -->
+    <a href="https://web.telegram.org/k/#@vanes_vintage" target="_self"><img height="20px" src="tg.jpg"></a>
+    <a href="https://secondmap.ru/" target="_blank">Карта магазинов</a>
+    <a href="page1.html" target="_self">Контактные данные</a>
+    <a href="page2.html" target="_self">Заказы</a>
+    <a href="DOM.html">Паспорт</a>
+    <a href="dom_js_1.html" class="active">Изменяем кириллицу на латиницу</a>
+    <a href="dom_js_2.html">Задача</a>
+  </div>
+
+   <h1>Паспорт</h1>
+    <div id='main_fon'>
+
+        <h5 id='pass_title' class='poiret-one-regular'>РОССИЙСКАЯ ФЕДЕРАЦИЯ</h5>
+        <div id='page_top'>
+            <p class='vidanstr1'><span id="issued-ru">ОТДЕЛОМ ВНУТРЕННИХ ДЕЛ</span></p>
+            <p class='vidanstr2'><span id="birthplace-ru">ГОР. НИЖНИЙ НОВГОРОД</span></p>
+            <p class='vidanstrdata'><span id="issue-date-ru">16. 06. 2004</span></p>
+            <p class='vidanstrcode'><span id="department-code-ru">630-002</span></p>
+            <img class="podpis" src='podpis1.png'>
+            <img class="podpis1" src='podpis.png'>
+        </div>
+
+        <div id='page_bottom'>
+            <img class='passfoto' src="foto.jpg">
+            <p class='hfamilia'><span id="surname-ru">МЕЛКОНЯН</span></p>
+            <p class='hname'><span id="name-ru">КАРИНА</span></p>
+            <p class='hfname'><span>КАРЕНОВНА</span></p>
+            <p class='hpol'><span id="gender-ru">ЖЕН</span></p>
+            <p class='hborn'><span id="birthdate-ru">26.05.2005</span></p>
+            <p class='hpborn1'><span id="birthplace-ru">ГОР. НИЖНИЙ НОВГОРОД</span></p>
+            <p class='hpborn2'><span>НИЖЕГОРОДСКОЙ ОБЛ.</span></p>
+        </div>
+    </div>
+
+
+<p id="for_click">кликните здесь</p>
+
+<script>
+    function changeToLatin() {
+        const surnameRu = document.getElementById("surname-ru");
+        const nameRu = document.getElementById("name-ru");
+        const patronymicRu = document.getElementById("patronymic-ru");
+        const birthdateRu = document.getElementById("birthdate-ru");
+        const genderRu = document.getElementById("gender-ru");
+        const birthplaceRu = document.getElementById("birthplace-ru");
+        const issuedRu = document.getElementById("issued-ru");
+        const departmentCodeRu = document.getElementById("department-code-ru");
+        const personalCodeRu = document.getElementById("personal-code-ru");
+        const signatureRu = document.getElementById("signature-ru");
+        const issueDateRu = document.getElementById("issue-date-ru");
+
+        surnameRu.textContent = surnameRu.textContent.replace(/МЕЛКОНЯН/g, "MELKONYAN");
+        nameRu.textContent = nameRu.textContent.replace(/КАРИНА/g, "KARINA");
+        birthdateRu.textContent = birthdateRu.textContent.replace(/26.05.2005/g, "26.05.2005");
+
+        surnameRu.style.fontWeight = 'bold';
+        nameRu.style.fontWeight = 'bold';
+        birthdateRu.style.fontWeight = 'bold';}
+
+    const nodeForClick = document.getElementById("for_click");
+    nodeForClick.addEventListener("click", changeToLatin);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM_JS. Считываем информацию из DOM</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        input[type="text"], input[type="date"] {
+            width: calc(100% - 20px);
+            padding: 12px;
+            border: 1px solid #4e3b3b; /* Темно-коричневый цвет */
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', serif; /* Винтажный шрифт для полей ввода */
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #4e3b3b; /* Темно-коричневый цвет */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px; /* Увеличенный размер шрифта для кнопки */
+            transition: background-color 0.3s;
+            font-family: 'Times New Roman', serif; /* Винтажный шрифт для кнопки */
+        }
+        input[type="submit"]:hover {
+            background-color: #4e3b3b; /* Более темный оттенок для эффекта наведения */
+        }
+         .screen {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .screenshot img {
+            max-width: 100px; /* Начальный размер изображения */
+            height: auto; /* Автоматическая высота для сохранения пропорций */
+            border: 2px solid #6f4c3e; /* Тёмно-коричневая рамка вокруг изображения */
+            border-radius: 8px; /* Закруглённые углы для изображения */
+            cursor: pointer; /* Указатель при наведении */
+            transition: transform 0.3s; /* Плавный переход для увеличения */
+        }
+        .screenshot img.large {
+            max-width: 500px; /* Размер изображения при увеличении */
+        }
+        *{
+  padding:0px;
+  margin:0px;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="navigation">
+    <a href="index.html">Главная</a>
+    <a href="#head1">Где нас найти?</a>
+    <a href="https://web.telegram.org/k/#@vanes_vintage" target="_self"><img height="20px" src="tg.jpg"></a>
+    <a href="https://secondmap.ru/" target="_blank">Карта магазинов</a>
+    <a href="page1.html">Контактные данные</a>
+    <a href="page2.html" >Заказы</a>
+    <a href="DOM.html" class="active">Паспорт</a>
+    <a href="dom_js_1.html">Изменяем кириллицу на латиницу</a>
+    <a href="dom_js_2.html">Задача</a>
+  </div>
+     <h1>Паспорт</h1>
+    <div id='main_fon'>
+
+        <h5 id='pass_title' class='poiret-one-regular'>РОССИЙСКАЯ ФЕДЕРАЦИЯ</h5>
+        <div id='page_top'>
+            <p class='vidanstr1'><span>ОТДЕЛОМ ВНУТРЕННИХ ДЕЛ</span></p>
+            <p class='vidanstr2'><span>ГОР. НИЖНИЙ НОВГОРОД</span></p>
+            <p class='vidanstrdata'>16. 06. 2004</p>
+            <p class='vidanstrcode'>630-002</p>
+            <img class="podpis" src='podpis1.png'>
+            <img class="podpis1" src='podpis.png'>
+        </div>
+
+        <div id='page_bottom'>
+            <img class='passfoto' src="foto.jpg">
+            <p class='hfamilia'><span>МЕЛКОНЯН</span></p>
+            <p class='hname'><span>КАРИНА</span></p>
+            <p class='hfname'><span>КАРЕНОВНА</span></p>
+            <p class='hpol'><span>ЖЕН</span></p>
+            <p class='hborn'><span>26.05.2005</span></p>
+            <p class='hpborn1'><span>ГОР. НИЖНИЙ НОВГОРОД</span></p>
+            <p class='hpborn2'><span>НИЖЕГОРОДСКОЙ ОБЛ.</span></p>
+        </div>
+    </div>
+
+    <h2>Скриншот</h2>
+    <a href="screen.png" target="_blank">
+        <img src="screen.png"  width="100"></a>
+
+ <script>
+        document.getElementById("readDataButton").addEventListener("click", function() {
+            // Используем getElementsByTagName для получения всех <p>
+            const paragraphs = document.getElementsByTagName('p');
+
+            // Извлекаем данные с использованием указанного синтаксиса
+            const surname = paragraphs[4].childNodes[1].innerText; // Фамилия
+            const name = paragraphs[5].childNodes[1].innerText; // Имя
+            const birthYear = paragraphs[8].childNodes[1].innerText; // Год рождения
+
+            // Формируем текст для вывода
+            const outputText = `Фамилия: ${surname}, Имя: ${name}, Год рождения: ${birthYear}`;
+            document.getElementById('output').innerText = outputText;
+        });
+    </script>
+</body>
+</html>

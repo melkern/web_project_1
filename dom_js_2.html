@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Решение алгоритмической задачи</title>
+  <style>
+
+  form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 0 auto;
+    border: 3px solid #4e3b3b; /* Увеличиваем толщину рамки и задаем цвет */
+}
+    form input {
+    width: 50%;
+  padding: 10px; /* Внутренние отступы */
+    margin-bottom: 10px; /* Отступы между полями ввода */
+    border: 1px solid #ccc; /* Обводка вокруг полей ввода */
+    border-radius: 4px; /* Закругленные углы */}
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 15px;
+    }
+
+
+    input[type="button"] {
+      background-color: #4e3b3b;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    input[type="button"]:hover {
+      background-color: #4e3b3b;
+    }
+
+    textarea {
+      resize: vertical;
+      max-width: 250px;
+    }
+.formulation {
+      background-color: #f9f9f9; /* Светло-серый фон */
+      border: 1px solid #ccc; /* Светло-серая рамка */
+      border-radius: 5px; /* Закругленные углы */
+      padding: 15px; /* Внутренние отступы */
+      margin: 20px 0; /* Отступы сверху и снизу */
+      font-family: Arial, sans-serif; /* Шрифт */
+      font-size: 16px; /* Размер шрифта */
+      color: #333; /* Цвет текста */
+    }
+
+  </style>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!--1016. Дано вещественное число A. Вычислить x = 0 при a > 100; x = a при a < 61, в противном случае x = a**4.-->
+    <div class="navigation">
+    <a href="index.html">Главная</a>
+    <a href="#head1">Где нас найти?</a>
+    <a href="https://web.telegram.org/k/#@vanes_vintage" target="_self"><img height="20px" src="tg.jpg"></a>
+    <a href="https://secondmap.ru/" target="_blank">Карта магазинов</a>
+    <a href="page1.html">Контактные данные</a>
+    <a href="page2.html" >Заказы</a>
+    <a href="DOM.html" >Паспорт</a>
+    <a href="dom_js_1.html">Изменяем кириллицу на латиницу</a>
+    <a href="dom_js_2.html" class="active">Задача</a>
+
+  </div>
+<p class="formulation">Дано вещественное число A. Вычислить x = 0 при a > 100; x = a при a < 61, в противном случае x = a**4.</p>
+    <form action="https://www.bing.com/search?" id="UserEnter" name="UserEnter" target="_blank">
+        <ul>
+            <li>Для поисковика:<input name="q" value="search"></li>
+            <li>Формулировка задачи
+                <br><textarea cols="60" rows="4" id="task" name="formulation">Дано вещественное число A. Вычислить x = 0 при a > 100; x = a при a < 61, в противном случае x = a**4.</textarea></li>
+            <li>a: <input id="a" name="a" type="number" value="75"></li>
+            <li>Результат решения задачи: <input id="result" name="result" value="не определен"></li>
+            <li>действие 1: <input id="verify" type="button" value="Проверить"></li>
+            <li>действие 2: <input id="send" type="button" value="Отправить"></li>
+        </ul>
+    </form>
+
+      <script>
+        const verifyButton = document.getElementById("verify");
+        const sendButton = document.getElementById("send");
+        const aInput = document.getElementById("a");
+        const resultInput = document.getElementById("result");
+        const form = document.getElementById("UserEnter");
+
+        function calculateX(a) {
+            if (a > 100) {
+                return 0;
+            } else if (a < 61) {
+                return a;
+            } else {
+                return a ** 4;
+            }
+        }
+
+        verifyButton.addEventListener("click", () => {
+            const a = parseFloat(aInput.value);
+            const x = calculateX(a);
+            resultInput.value = x;  // Отображаем результат в поле
+        });
+
+        // Обработчик для отправки данных на сервер
+        sendButton.addEventListener("click", () => {
+            // Присваиваем результат в поле "result" перед отправкой
+            const a = parseFloat(aInput.value);
+            const x = calculateX(a);
+            resultInput.value = x;
+
+            // Теперь отправим форму на сервер
+            form.submit();
+        });
+    </script>
+</body>
+</html>
